@@ -5,7 +5,7 @@ vendor_ids = "1002"
 device_ids = "1435 163f"
 hwd_product_name_pattern = '(Jupiter|Galileo)'
 priority = 6
-packages = 'steamos-manager steamos-powerbuttond jupiter-fan-control steamdeck-dsp cachyos-handheld mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon opencl-mesa lib32-opencl-mesa rocm-opencl-runtime'
+packages = 'mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon opencl-mesa lib32-opencl-mesa rocm-opencl-runtime'
 post_install = """
     echo "Steam Deck chwd installing..."
     services=("jupiter-fan-control")
@@ -30,7 +30,7 @@ vendor_ids = "1002"
 device_ids = "15bf 15c8"
 hwd_product_name_pattern = '(ROG Ally).*'
 priority = 6
-packages = 'steamos-manager steamos-powerbuttond inputplumber cachyos-handheld mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon opencl-mesa lib32-opencl-mesa rocm-opencl-runtime'
+packages = 'mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon opencl-mesa lib32-opencl-mesa rocm-opencl-runtime'
 post_install = """
     echo "Ally chwd installing..."
     echo "Installing audio profile..."
@@ -63,7 +63,7 @@ vendor_ids = "1002"
 device_ids = "15bf"
 hwd_product_name_pattern = '(83E1)'
 priority = 6
-packages = 'hhd hhd-ui adjustor cachyos-handheld mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon opencl-mesa lib32-opencl-mesa rocm-opencl-runtime'
+packages = 'mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon opencl-mesa lib32-opencl-mesa rocm-opencl-runtime'
 post_install = """
     echo "Legion go chwd installing..."
     username=$(id -nu 1000)
@@ -90,7 +90,7 @@ vendor_ids = "1002"
 device_ids = "1681 15bf"
 hwd_product_name_pattern = '(83L3|83N6|83Q2|83Q3)'
 priority = 6
-packages = 'inputplumber steamos-manager steamos-powerbuttond cachyos-handheld mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon opencl-mesa lib32-opencl-mesa rocm-opencl-runtime'
+packages = 'mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon opencl-mesa lib32-opencl-mesa rocm-opencl-runtime'
 
 [intel-msi-claw]
 desc = 'MSI Claw Intel'
@@ -99,7 +99,7 @@ vendor_ids = "8086"
 device_ids = "64a0 7d55"
 hwd_product_name_pattern = '(A2VM|A1M)'
 priority = 6
-packages = 'inputplumber steamos-manager steamos-powerbuttond cachyos-handheld mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver'
+packages = 'mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver'
 post_install = """
     echo "Claw chwd installing..."
     echo msi-wmi-platform > /usr/lib/modules-load.d/chwd-msi-claw.conf

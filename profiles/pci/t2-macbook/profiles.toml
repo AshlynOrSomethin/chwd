@@ -39,6 +39,10 @@ post_remove = """
     rm -f /etc/modprobe.d/brcmfmac.conf
     rm -f /etc/modules-load.d/t2.conf
 
+    echo '[arch-mact2]
+Server = https://mirror.funami.tech/arch-mact2/os/x86_64
+SigLevel = Never' >>/etc/pacman.conf
+
     mkinitcpio -P
     kernelparams="intel_iommu=on iommu=pt pcie_ports=compat"
     echo "Removing kernel parameters..."
