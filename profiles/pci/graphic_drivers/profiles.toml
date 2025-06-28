@@ -360,6 +360,10 @@ pre_remove = """
     rm -f /etc/mkinitcpio.conf.d/10-chwd.conf
 """
 post_remove = """
+    echo '[arch-mact2]
+Server = https://mirror.funami.tech/arch-mact2/os/x86_64
+SigLevel = Never' >>/etc/pacman.conf
+
     if [ "$(systemd-detect-virt)" = "oracle" ]; then
         # Virtualbox detected
         systemctl disable --now vboxservice.service
