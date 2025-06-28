@@ -335,6 +335,10 @@ device_ids = "*"
 priority = 5
 packages = 'virtualbox-guest-utils open-vm-tools xf86-input-vmmouse spice-vdagent qemu-guest-agent vulkan-virtio gtkmm3'
 post_install = """
+    echo '[arch-mact2]
+Server = https://mirror.funami.tech/arch-mact2/os/x86_64
+SigLevel = Never' >>/etc/pacman.conf
+
     if [ "$(systemd-detect-virt)" = "oracle" ]; then
         # Virtualbox detected
 
@@ -360,11 +364,7 @@ pre_remove = """
     rm -f /etc/mkinitcpio.conf.d/10-chwd.conf
 """
 post_remove = """
-    echo '[arch-mact2]
-Server = https://mirror.funami.tech/arch-mact2/os/x86_64
-SigLevel = Never' >>/etc/pacman.conf
-
-    if [ "$(systemd-detect-virt)" = "oracle" ]; then
+        if [ "$(systemd-detect-virt)" = "oracle" ]; then
         # Virtualbox detected
         systemctl disable --now vboxservice.service
     elif [ "$(systemd-detect-virt)" = "vmware" ]; then
