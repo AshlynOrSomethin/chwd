@@ -8,19 +8,9 @@ priority = 6
 packages = 'mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon opencl-mesa lib32-opencl-mesa rocm-opencl-runtime'
 post_install = """
     echo "Steam Deck chwd installing..."
-    services=("jupiter-fan-control")
-    echo "Enabling services..."
-    for service in ${services[@]}; do
-        systemctl enable --now "${service}.service"
-    done
 """
 post_remove = """
     echo "Steam Deck chwd removing..."
-    services=("jupiter-fan-control")
-    echo "Disabling services..."
-    for service in ${services[@]}; do
-        systemctl disable "${service}.service"
-    done
 """
 
 [phoenix-rog-ally]
